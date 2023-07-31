@@ -1,0 +1,692 @@
+
+
+{
+  "type": "data",
+  "message": "see data",
+  "data": [
+    {
+      "property_name": "CONNECTION",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "CONNECT", "label": "Connect", "switch": true },
+          { "name": "DISCONNECT", "label": "Disconnect", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "DRIVER_INFO",
+      "property_info": {
+        "type": "TEXT",
+        "data": [
+          {
+            "name": "DRIVER_NAME",
+            "label": "Name",
+            "text": "Telescope Simulator"
+          },
+          {
+            "name": "DRIVER_EXEC",
+            "label": "Exec",
+            "text": "indi_simulator_telescope"
+          },
+          { "name": "DRIVER_VERSION", "label": "Version", "text": "1.0" },
+          { "name": "DRIVER_INTERFACE", "label": "Interface", "text": "5" }
+        ],
+        "permission": "ReadOnly"
+      }
+    },
+    {
+      "property_name": "POLLING_PERIOD",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "PERIOD_MS",
+            "label": "Period (ms)",
+            "value": 250.0,
+            "max": 600000.0,
+            "min": 10.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "DEBUG",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "ENABLE", "label": "Enable", "switch": false },
+          { "name": "DISABLE", "label": "Disable", "switch": true }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "CONFIG_PROCESS",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "CONFIG_LOAD", "label": "Load", "switch": false },
+          { "name": "CONFIG_SAVE", "label": "Save", "switch": false },
+          { "name": "CONFIG_DEFAULT", "label": "Default", "switch": false },
+          { "name": "CONFIG_PURGE", "label": "Purge", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "CONNECTION_MODE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "CONNECTION_SERIAL", "label": "Serial", "switch": true },
+          { "name": "CONNECTION_TCP", "label": "Network", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "DEVICE_PORT",
+      "property_info": {
+        "type": "TEXT",
+        "data": [{ "name": "PORT", "label": "Port", "text": "/dev/ttyUSB0" }],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "DEVICE_BAUD_RATE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "9600", "label": "9600", "switch": true },
+          { "name": "19200", "label": "19200", "switch": false },
+          { "name": "38400", "label": "38400", "switch": false },
+          { "name": "57600", "label": "57600", "switch": false },
+          { "name": "115200", "label": "115200", "switch": false },
+          { "name": "230400", "label": "230400", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "DEVICE_AUTO_SEARCH",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "INDI_ENABLED", "label": "Enabled", "switch": true },
+          { "name": "INDI_DISABLED", "label": "Disabled", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "DEVICE_PORT_SCAN",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "Scan Ports", "label": "Scan Ports", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "ACTIVE_DEVICES",
+      "property_info": {
+        "type": "TEXT",
+        "data": [
+          { "name": "ACTIVE_GPS", "label": "GPS", "text": "GPS Simulator" },
+          { "name": "ACTIVE_DOME", "label": "DOME", "text": "Dome Simulator" }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "DOME_POLICY",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "DOME_IGNORED", "label": "Dome ignored", "switch": true },
+          { "name": "DOME_LOCKS", "label": "Dome locks", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_INFO",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "TELESCOPE_APERTURE",
+            "label": "Aperture (mm)",
+            "value": 120.0,
+            "max": 5000.0,
+            "min": 10.0
+          },
+          {
+            "name": "TELESCOPE_FOCAL_LENGTH",
+            "label": "Focal Length (mm)",
+            "value": 900.0,
+            "max": 10000.0,
+            "min": 10.0
+          },
+          {
+            "name": "GUIDER_APERTURE",
+            "label": "Guider Aperture (mm)",
+            "value": 120.0,
+            "max": 5000.0,
+            "min": 10.0
+          },
+          {
+            "name": "GUIDER_FOCAL_LENGTH",
+            "label": "Guider Focal Length (mm)",
+            "value": 900.0,
+            "max": 10000.0,
+            "min": 10.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "SCOPE_CONFIG_NAME",
+      "property_info": {
+        "type": "TEXT",
+        "data": [
+          { "name": "SCOPE_CONFIG_NAME", "label": "Config Name", "text": "" }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "MOUNT_TYPE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "ALTAZ", "label": "AltAz", "switch": false },
+          { "name": "EQ_FORK", "label": "Fork (Eq)", "switch": false },
+          { "name": "EQ_GEM", "label": "GEM", "switch": true }
+        ],
+        "permission": "WriteOnly"
+      }
+    },
+    {
+      "property_name": "SIM_PIER_SIDE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "PS_OFF", "label": "Off", "switch": false },
+          { "name": "PS_ON", "label": "On", "switch": true }
+        ],
+        "permission": "WriteOnly"
+      }
+    },
+    {
+      "property_name": "MOUNT_MODEL",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "MM_IH",
+            "label": "Ha Zero (IH)",
+            "value": 0.0,
+            "max": 5.0,
+            "min": -5.0
+          },
+          {
+            "name": "MM_ID",
+            "label": "Dec Zero (ID)",
+            "value": 0.0,
+            "max": 5.0,
+            "min": -5.0
+          },
+          {
+            "name": "MM_CH",
+            "label": "Cone (CH)",
+            "value": 0.0,
+            "max": 5.0,
+            "min": -5.0
+          },
+          {
+            "name": "MM_NP",
+            "label": "Ha/Dec (NP)",
+            "value": 0.0,
+            "max": 5.0,
+            "min": -5.0
+          },
+          {
+            "name": "MM_MA",
+            "label": "Pole Azm (MA)",
+            "value": 0.0,
+            "max": 5.0,
+            "min": -5.0
+          },
+          {
+            "name": "MM_ME",
+            "label": "Pole elev (ME)",
+            "value": 0.0,
+            "max": 5.0,
+            "min": -5.0
+          }
+        ],
+        "permission": "WriteOnly"
+      }
+    },
+    {
+      "property_name": "MOUNT_AXES",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "PRIMARY",
+            "label": "Primary (Ha)",
+            "value": 90.0,
+            "max": 180.0,
+            "min": -180.0
+          },
+          {
+            "name": "SECONDARY",
+            "label": "Secondary (Dec)",
+            "value": 90.0,
+            "max": 180.0,
+            "min": -180.0
+          }
+        ],
+        "permission": "ReadOnly"
+      }
+    },
+    {
+      "property_name": "FLIP_HA",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "FLIP_HA",
+            "label": "Hour Angle (deg)",
+            "value": 0.0,
+            "max": 20.0,
+            "min": -20.0
+          }
+        ],
+        "permission": "WriteOnly"
+      }
+    },
+    {
+      "property_name": "ON_COORD_SET",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "TRACK", "label": "Track", "switch": true },
+          { "name": "SLEW", "label": "Slew", "switch": false },
+          { "name": "SYNC", "label": "Sync", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "EQUATORIAL_EOD_COORD",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "RA",
+            "label": "RA (hh:mm:ss)",
+            "value": 22.407694567918593,
+            "max": 24.0,
+            "min": 0.0
+          },
+          {
+            "name": "DEC",
+            "label": "DEC (dd:mm:ss)",
+            "value": 90.0,
+            "max": 90.0,
+            "min": -90.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_ABORT_MOTION",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [{ "name": "ABORT", "label": "Abort", "switch": false }],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_TRACK_MODE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "TRACK_SIDEREAL", "label": "Sidereal", "switch": true },
+          { "name": "TRACK_SOLAR", "label": "Solar", "switch": false },
+          { "name": "TRACK_LUNAR", "label": "Lunar", "switch": false },
+          { "name": "TRACK_CUSTOM", "label": "Custom", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_TRACK_STATE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "TRACK_ON", "label": "On", "switch": false },
+          { "name": "TRACK_OFF", "label": "Off", "switch": true }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_TRACK_RATE",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "TRACK_RATE_RA",
+            "label": "RA (arcsecs/s)",
+            "value": 15.041067178670204,
+            "max": 16384.0,
+            "min": -16384.0
+          },
+          {
+            "name": "TRACK_RATE_DE",
+            "label": "DE (arcsecs/s)",
+            "value": 0.0,
+            "max": 16384.0,
+            "min": -16384.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_MOTION_NS",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "MOTION_NORTH", "label": "North", "switch": false },
+          { "name": "MOTION_SOUTH", "label": "South", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_MOTION_WE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "MOTION_WEST", "label": "West", "switch": false },
+          { "name": "MOTION_EAST", "label": "East", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_REVERSE_MOTION",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "REVERSE_NS", "label": "North/South", "switch": false },
+          { "name": "REVERSE_WE", "label": "West/East", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_SLEW_RATE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "1x", "label": "Guide", "switch": false },
+          { "name": "2x", "label": "Centering", "switch": false },
+          { "name": "3x", "label": "Find", "switch": true },
+          { "name": "4x", "label": "Max", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TARGET_EOD_COORD",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "RA",
+            "label": "RA (hh:mm:ss)",
+            "value": 0.0,
+            "max": 24.0,
+            "min": 0.0
+          },
+          {
+            "name": "DEC",
+            "label": "DEC (dd:mm:ss)",
+            "value": 0.0,
+            "max": 90.0,
+            "min": -90.0
+          }
+        ],
+        "permission": "ReadOnly"
+      }
+    },
+    {
+      "property_name": "TIME_UTC",
+      "property_info": {
+        "type": "TEXT",
+        "data": [
+          { "name": "UTC", "label": "UTC Time", "text": "2023-07-23T08:07:25" },
+          { "name": "OFFSET", "label": "UTC Offset", "text": "8.00" }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "GEOGRAPHIC_COORD",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "LAT",
+            "label": "Lat (dd:mm:ss.s)",
+            "value": 51.468,
+            "max": 90.0,
+            "min": -90.0
+          },
+          {
+            "name": "LONG",
+            "label": "Lon (dd:mm:ss.s)",
+            "value": 0.0,
+            "max": 360.0,
+            "min": 0.0
+          },
+          {
+            "name": "ELEV",
+            "label": "Elevation (m)",
+            "value": -10.0,
+            "max": 10000.0,
+            "min": -200.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_PARK",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "PARK", "label": "Park(ed)", "switch": false },
+          { "name": "UNPARK", "label": "UnPark(ed)", "switch": true }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_PARK_POSITION",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "PARK_HA",
+            "label": "HA (hh:mm:ss)",
+            "value": 8.0,
+            "max": 12.0,
+            "min": -12.0
+          },
+          {
+            "name": "PARK_DEC",
+            "label": "DEC (dd:mm:ss)",
+            "value": 90.0,
+            "max": 90.0,
+            "min": -90.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_PARK_OPTION",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "PARK_CURRENT", "label": "Current", "switch": false },
+          { "name": "PARK_DEFAULT", "label": "Default", "switch": false },
+          { "name": "PARK_WRITE_DATA", "label": "Write Data", "switch": false },
+          { "name": "PARK_PURGE_DATA", "label": "Purge Data", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_PIER_SIDE",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          {
+            "name": "PIER_WEST",
+            "label": "West (pointing east)",
+            "switch": false
+          },
+          {
+            "name": "PIER_EAST",
+            "label": "East (pointing west)",
+            "switch": true
+          }
+        ],
+        "permission": "ReadOnly"
+      }
+    },
+    {
+      "property_name": "APPLY_SCOPE_CONFIG",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "SCOPE_CONFIG1", "label": "Config #1", "switch": true },
+          { "name": "SCOPE_CONFIG2", "label": "Config #2", "switch": false },
+          { "name": "SCOPE_CONFIG3", "label": "Config #3", "switch": false },
+          { "name": "SCOPE_CONFIG4", "label": "Config #4", "switch": false },
+          { "name": "SCOPE_CONFIG5", "label": "Config #5", "switch": false },
+          { "name": "SCOPE_CONFIG6", "label": "Config #6", "switch": false }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "USEJOYSTICK",
+      "property_info": {
+        "type": "SWITCH",
+        "data": [
+          { "name": "ENABLE", "label": "Enable", "switch": false },
+          { "name": "DISABLE", "label": "Disable", "switch": true }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "SNOOP_JOYSTICK",
+      "property_info": {
+        "type": "TEXT",
+        "data": [
+          {
+            "name": "SNOOP_JOYSTICK_DEVICE",
+            "label": "Device",
+            "text": "Joystick"
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_TIMED_GUIDE_NS",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "TIMED_GUIDE_N",
+            "label": "North (ms)",
+            "value": 0.0,
+            "max": 60000.0,
+            "min": 0.0
+          },
+          {
+            "name": "TIMED_GUIDE_S",
+            "label": "South (ms)",
+            "value": 0.0,
+            "max": 60000.0,
+            "min": 0.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "TELESCOPE_TIMED_GUIDE_WE",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "TIMED_GUIDE_W",
+            "label": "West (ms)",
+            "value": 0.0,
+            "max": 60000.0,
+            "min": 0.0
+          },
+          {
+            "name": "TIMED_GUIDE_E",
+            "label": "East (ms)",
+            "value": 0.0,
+            "max": 60000.0,
+            "min": 0.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    },
+    {
+      "property_name": "GUIDE_RATE",
+      "property_info": {
+        "type": "NUMBER",
+        "data": [
+          {
+            "name": "GUIDE_RATE_WE",
+            "label": "W/E Rate",
+            "value": 0.5,
+            "max": 1.0,
+            "min": 0.0
+          },
+          {
+            "name": "GUIDE_RATE_NS",
+            "label": "N/S Rate",
+            "value": 0.5,
+            "max": 1.0,
+            "min": 0.0
+          }
+        ],
+        "permission": "ReadWrite"
+      }
+    }
+  ]
+}
